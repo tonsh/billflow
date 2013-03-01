@@ -16,11 +16,9 @@ class MakoTemplater(object):
     def render(cls, tmpl_name, **context):
         ''' 模板渲染 '''
         if not cls._lookup:
-            render_tmpl = MakoTemplater()
-            cls._lookup = render_tmpl._get_lookup()
+            cls._lookup = MakoTemplater()._get_lookup()
 
-        tmpl = cls._lookup.get_template(tmpl_name)
-        return tmpl.render(**context)
+        return cls._lookup.get_template(tmpl_name).render(**context)
 
     def _get_lookup(self):
         ''' 通过 TemplateLookup 获取模板对象 '''
