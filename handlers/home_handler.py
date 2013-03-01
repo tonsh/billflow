@@ -2,6 +2,7 @@
 ''' 首页 RequestHandler '''
 
 import tornado.web
+from handlers.base_handler import BaseHandler
 
 class HomeHandler(tornado.web.RequestHandler):
     ''' 首页 '''
@@ -16,7 +17,7 @@ class LoginHandler(tornado.web.RequestHandler):
     def get(self):
         self.write('Login')
 
-class RegisterHandler(tornado.web.RequestHandler):
+class RegisterHandler(BaseHandler):
     '''注册 '''
     def get(self):
-        self.write('Register')
+        self.render('register.html')
