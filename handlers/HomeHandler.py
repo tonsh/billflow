@@ -15,3 +15,8 @@ class LoginHandler(tornado.web.RequestHandler):
     ''' 登录 '''
     def get(self):
         self.write('Login')
+
+class RegisterHandler(tornado.web.RequestHandler):
+    '''注册 '''
+    def get(self):
+        self.write('Register')
