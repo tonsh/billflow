@@ -3,9 +3,9 @@
 
 import tornado.web
 import tornado.ioloop
-from handlers.HomeHandler import HomeHandler
-from handlers.HomeHandler import LoginHandler
-from handlers.HomeHandler import RegisterHandler
+from handlers.home_handler import HomeHandler
+from handlers.home_handler import LoginHandler
+from handlers.home_handler import RegisterHandler
 
 settings = {
     "login_url": "/login",
