@@ -24,6 +24,7 @@ Structure
 First should run application server in terminal:
 
     cd billfow
+    cp conf._py conf.py # setting your config with @YOU
     python3 app.py
 
 The application server port default 8080 and view the application in your web browser with URL [http://127.0.0.1:8080](http://127.0.0.1:8080).

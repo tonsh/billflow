@@ -1,0 +1,28 @@
+#coding=utf-8
+''' 配置文件，注释中标有 @YOU 的配置项需根据自己的环境修改为相应的配置 '''
+
+''' 工作目录 @YOU '''
+WORK_DIR = "/home/your/yourprojects/billflow/"
+
+''' 模板渲染配置 @YOU '''
+TMPL_LOOKUP = {
+    # 模板存放路径
+    "directories": [
+        "%s%s" % (WORK_DIR, "templates"),
+    ],
+
+    # 模板源代码(python)的缓存路径
+    "module_directory": "%s/%s" % (WORK_DIR, "tmp/templates"),
+
+    # lookup 会持续加载模板到内存(缓存)中，当模板占用内存大于该值会释放部分缓存
+    "collection_size": 500,
+
+    # 设置文件系统检查 生产环境建议改为False
+    "filesystem_checks": True,
+
+    # 使用 output_encoding
+    "output_encoding": "utf-8",
+    "encoding_errors": "replace",
+
+    # ... ... 可添加其他 TemplateLookup 设置信息
+}
