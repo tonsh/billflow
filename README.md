@@ -8,9 +8,8 @@ Billflow Supports
 
 Structure
 
-    bill/         项目
+    billflow/         项目
         __init__.py
-        urls.py
         app.py
         libs/         共用类或方法
         models/
