@@ -5,6 +5,7 @@
 Billflow Supports
 
 * [Tornado](http://www.tornadoweb.org)
+* [pylint](http://pypi.python.org/pypi/pylint)
 
 Structure
 
@@ -16,6 +17,12 @@ Structure
         handlers/
         templates/
         languages/
+
+## How do I start the application?
+First should start server in terminal
+    `cd billfow`
+    run `python3 app.py`
+The application server port default 8080 and view the application in your web browser with URL [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
 ## License
 
