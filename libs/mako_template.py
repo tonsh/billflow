@@ -3,7 +3,7 @@
 
 from mako.template import Template
 from mako.lookup import TemplateLookup
-from conf import TMPL_LOOKUP
+from configures.conf import TMPL_LOOKUP
 
 class MakoTemplater(object):
     ''' 封装 Mako 渲染模板的类 '''
