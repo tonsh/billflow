@@ -13,7 +13,7 @@ Structure
     billflow/         项目
         __init__.py
         app.py
-        configures/
+        settings/
         libs/         共用类或方法
         models/
         handlers/
@@ -25,7 +25,7 @@ Structure
 At first you should run application server in a terminal:
 
     cd billfow
-    cp configures/conf._py configures/conf.py # setting your config with @YOU
+    cp settings/conf._py settings/conf.py # setting your config with @YOU
     python3 app.py
 
 This application server has been running at the port 8080 and you can view the application in your web browser with URL [http://127.0.0.1:8080](http://127.0.0.1:8080).
