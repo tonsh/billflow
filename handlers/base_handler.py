@@ -11,3 +11,10 @@ class BaseHandler(tornado.web.RequestHandler):
         ''' 从写render方法，使用Mako模板引擎实现 '''
         html = MakoTemplater.render(tmpl_name, **context)
         self.finish(html)
+
+    def request_args(self):
+        ''' 处理 Tornado request 返回的List化的参数 '''
+        result = {}
+        for key in self.request.arguments:
+            result[key] = self.get_argument(key)
+        return result

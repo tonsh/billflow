@@ -21,3 +21,7 @@ class RegisterHandler(BaseHandler):
     '''注册 '''
     def get(self):
         self.render('register.html')
+
+    def post(self):
+        args = self.request_args()
+        print(args)
