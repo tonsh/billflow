@@ -24,4 +24,4 @@ class RegisterHandler(BaseHandler):
 
     def post(self):
         args = self.request_args()
-        print(args)
+        self.return_json(args)

@@ -18,3 +18,9 @@ class BaseHandler(tornado.web.RequestHandler):
         for key in self.request.arguments:
             result[key] = self.get_argument(key)
         return result
+
+    def return_json(self, data={}):
+        ''' 响应 Json 数据 '''
+        self.set_header('Content-Type', 'application/json')
+        self.write(data)
+        self.finish()
