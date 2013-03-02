@@ -1,8 +1,8 @@
 # Billflow
 
-## A tool which analytics my shopping list!
+## A tool which analytics my shopping list
 
-Billflow Supports
+Requirement
 
 * [Tornado](http://www.tornadoweb.org)
 * [pylint](http://pypi.python.org/pypi/pylint)
@@ -19,15 +19,15 @@ Structure
         templates/
         languages/
 
-## How do I start the application?
+## How can I start the application?
 
-First should run application server in terminal:
+At first you should run application server in a terminal:
 
     cd billfow
     cp conf._py conf.py # setting your config with @YOU
     python3 app.py
 
-The application server port default 8080 and view the application in your web browser with URL [http://127.0.0.1:8080](http://127.0.0.1:8080).
+This application server has been running at the port 8080 and you can view the application in your web browser with URL [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
 ## License
 
