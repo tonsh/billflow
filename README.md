@@ -7,6 +7,7 @@ Requirement
 * [Tornado](http://www.tornadoweb.org)
 * [pylint](http://pypi.python.org/pypi/pylint)
 * [Mako](http://docs.makotemplates.org/en/latest/usage.html)
+* [SQLAlchemy](http://www.sqlalchemy.org)
 
 Structure
 

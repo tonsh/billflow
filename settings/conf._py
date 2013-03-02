@@ -1,6 +1,13 @@
 #coding=utf-8
 ''' 配置文件，注释中标有 @YOU 的配置项需根据自己的环境修改为相应的配置 '''
 
+''' Mysql 配置 @YOU '''
+MYSQL_MAP = {
+    "user":     "root",
+    "pwd":      "root",
+    "database": "billflow"
+}
+
 ''' 工作目录 @YOU '''
 WORK_DIR = "/home/your/yourprojects/billflow/"
 
