@@ -21,6 +21,7 @@ TMPL_LOOKUP = {
     "filesystem_checks": True,
 
     # 使用 output_encoding
+    "input_encoding": "utf-8",
     "output_encoding": "utf-8",
     "encoding_errors": "replace",
 
