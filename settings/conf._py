@@ -3,9 +3,12 @@
 
 ''' Mysql 配置 @YOU '''
 MYSQL_MAP = {
+    "host":     "127.0.0.1",
     "user":     "root",
     "pwd":      "root",
     "database": "billflow"
+    "echo":     False,
+    "encoding": "UTF-8",
 }
 
 ''' 工作目录 @YOU '''

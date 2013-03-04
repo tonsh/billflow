@@ -23,5 +23,7 @@ class RegisterHandler(BaseHandler):
         self.render('register.html')
 
     def post(self):
+        from models.tables import UserBase
+
         args = self.request_args()
         self.return_json(args)
