@@ -32,6 +32,10 @@ class User(object):
         if not name:
             raise BillException(102)
 
+        ucount = self.session.query(UserMapper).filter_by(name=name).count()
+        if ucount > 0:
+            raise BillException(104)
+
         return name
 
     def check_pwd(self, pwd):
