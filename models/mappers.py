@@ -1,4 +1,4 @@
-#codin=utf-8
+#coding=utf-8
 ''' Tables basic models '''
 
 from sqlalchemy import Column, Integer, String, DateTime, Boolean
