@@ -1,4 +1,4 @@
-#conding=utf-8
+#coding=utf-8
 ''' 数据库连接基类 '''
 
 from sqlalchemy import create_engine
@@ -27,7 +27,11 @@ class Database(object):
         self.session = scoped_session(sessionmaker(bind=self.engine))
 
     def create_db(self):
+        ''' 创建 mappers.py 里定义的表 '''
         Base.metadata.create_all(self.engine)
+
+    def get_session(self):
+        return self.session
 
     @classmethod
     def instance(cls):
