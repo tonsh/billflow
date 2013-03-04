@@ -25,12 +25,15 @@ class RegisterHandler(BaseHandler):
         self.render('register.html')
 
     def post(self):
-        from models.mappers import UserMapper
+        from models.user import User
+        from libs.utils import row2dict
 
         try:
             args = self.request_args()
-            if args.get('pwd') != args.get('repwd'):
+            if args.get('password') != args.get('repwd'):
                 raise BillException(101)
-            self.return_json(args)
+
+            user = User().create(args)
+            self.return_json(row2dict(user))
         except BillException as error:
             self.return_json(error.info())
