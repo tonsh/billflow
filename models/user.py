@@ -12,7 +12,7 @@ class User(object):
         self.db = Database.instance()
         self.session = self.db.get_session()
 
-    def get_one_by_id(self, user_id):
+    def get_user_by_id(self, user_id):
         return self.session.query(UserMapper).filter_by(id=user_id).first()
 
     def create(self, user):
