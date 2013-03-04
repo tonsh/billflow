@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from models.database import Base
 from models.database import Database
 
-class UserBase(Base):
+class UserMapper(Base):
     ''' 用户表结构 '''
     __tablename__ = 'users'
 
