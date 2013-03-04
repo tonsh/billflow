@@ -3,6 +3,7 @@
 
 import tornado.web
 from handlers.base_handler import BaseHandler
+from libs.bill_exception import BillException
 
 class HomeHandler(tornado.web.RequestHandler):
     ''' 首页 '''
@@ -17,6 +18,7 @@ class LoginHandler(tornado.web.RequestHandler):
     def get(self):
         self.write('Login')
 
+
 class RegisterHandler(BaseHandler):
     '''注册 '''
     def get(self):
@@ -25,5 +27,10 @@ class RegisterHandler(BaseHandler):
     def post(self):
         from models.mappers import UserMapper
 
-        args = self.request_args()
-        self.return_json(args)
+        try:
+            args = self.request_args()
+            if args.get('pwd') != args.get('repwd'):
+                raise BillException(101)
+            self.return_json(args)
+        except BillException as error:
+            self.return_json(error.info())
