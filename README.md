@@ -30,6 +30,7 @@ At first you should run application server in a terminal:
     python3 app.py
 
 If you add template languages, what you should run as below:
+
     xgettext --from-code=utf-8 -L Python -k_ -j -o ./locale/en_US/LC_MESSAGES/lang.po templaes/*.html
 
 -j will join messages with existing file. So you juest translat the added message in .po, remember generate .mo file:
