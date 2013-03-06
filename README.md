@@ -8,6 +8,7 @@ Requirement
 * [pylint](http://pypi.python.org/pypi/pylint)
 * [Mako](http://docs.makotemplates.org/en/latest/usage.html)
 * [SQLAlchemy](http://www.sqlalchemy.org)
+* [SQLAlchemy Migrate](https://sqlalchemy-migrate.readthedocs.org/en/v0.7.2/versioning.html)
 
 Structure
 
