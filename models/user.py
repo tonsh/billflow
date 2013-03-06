@@ -1,6 +1,7 @@
 #coding=utf-8
 ''' 用户模型 '''
 
+import hashlib
 from models.mappers import UserMapper
 from models.database import Database
 from libs.bill_exception import BillException
@@ -43,4 +44,4 @@ class User(object):
         if not pwd:
             raise BillException(103)
 
-        return pwd
+        return hashlib.new("md5", pwd.encode('utf-8')).hexdigest()
