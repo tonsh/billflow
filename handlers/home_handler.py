@@ -23,7 +23,7 @@ class SettingHandler(BaseHandler):
 class LoginHandler(BaseHandler):
     ''' 登录 '''
     def get(self):
-        if not self.current_user:
+        if self.current_user:
             self.redirect("/setting")
         else:
             self.render("login.html")
@@ -37,6 +37,12 @@ class LoginHandler(BaseHandler):
         except BillException as error:
             self.return_json(error.info())
 
+
+class LogoutHandler(BaseHandler):
+    ''' 取消登录 '''
+    def get(self):
+        self.set_secure_cookie("user", "")
+        self.redirect("/")
 
 class RegisterHandler(BaseHandler):
     '''注册 '''

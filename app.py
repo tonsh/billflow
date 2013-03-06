@@ -6,6 +6,7 @@ import tornado.ioloop
 import tornado.locale
 from handlers.home_handler import HomeHandler
 from handlers.home_handler import LoginHandler
+from handlers.home_handler import LogoutHandler
 from handlers.home_handler import RegisterHandler
 from handlers.home_handler import SettingHandler
 
@@ -17,6 +18,7 @@ settings = {
 application = tornado.web.Application([
     (r"/",      HomeHandler),
     (r"/login", LoginHandler),
+    (r"/logout", LogoutHandler),
     (r"/register", RegisterHandler),
     (r"/setting", SettingHandler),
 ], **settings)
