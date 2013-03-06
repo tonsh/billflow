@@ -23,7 +23,19 @@ class SettingHandler(BaseHandler):
 class LoginHandler(BaseHandler):
     ''' 登录 '''
     def get(self):
-        self.write('Login')
+        if not self.current_user:
+            self.redirect("/setting")
+        else:
+            self.render("login.html")
+
+    def post(self):
+        try:
+            args = self.request_args()
+            user = User().get_login_user(args)
+            self.set_secure_cookie("user", str(user.id))
+            self.redirect("/setting")
+        except BillException as error:
+            self.return_json(error.info())
 
 
 class RegisterHandler(BaseHandler):

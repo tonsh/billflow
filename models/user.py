@@ -16,6 +16,12 @@ class User(object):
     def get_user_by_id(self, user_id):
         return self.session.query(UserMapper).filter_by(id=user_id).first()
 
+    def get_login_user(self, user):
+        return self.session.query(UserMapper).filter_by(
+                    name=user.get('name', ''),
+                    password=self.check_pwd(user.get('password', '')),
+                ).first()
+
     def create(self, user):
         ''' 添加一个新用户 '''
         new = {
@@ -30,6 +36,7 @@ class User(object):
 
     def check_name(self, name):
         ''' 用户名称验证 '''
+        name = name.strip()
         if not name:
             raise BillException(102)
 
@@ -41,6 +48,7 @@ class User(object):
 
     def check_pwd(self, pwd):
         ''' 密码验证 '''
+        pwd = pwd.strip()
         if not pwd:
             raise BillException(103)
 
