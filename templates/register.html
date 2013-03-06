@@ -1,14 +1,14 @@
 <%inherit file="base.html" />
 
 <%def name="title()">
-    BillFlow - 注册
+    BillFlow - _('注册')
 </%def>
 
 <%def name="body_content()">
     <form method="post" action="/register">
-        用户名: <input type="text" name="name" value="" />
-        密码:   <input type="password" name="password" value="" />
-        确认密码: <input type="password" name="repwd" value="" />
-        <input type="submit" value="注册" />
+        ${_('用户名')}: <input type="text" name="name" value="" />
+        ${_('密码')}:   <input type="password" name="password" value="" />
+        ${_('确认密码')}: <input type="password" name="repwd" value="" />
+        <input type="submit" value="${_('注册')}" />
     </form>
 </%def>

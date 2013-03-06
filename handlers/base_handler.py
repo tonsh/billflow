@@ -7,8 +7,22 @@ from libs.mako_template import MakoTemplater
 class BaseHandler(tornado.web.RequestHandler):
     ''' 应用Handler的基类 '''
 
+    def get_user_locale(self):
+        ''' 重写 handler的 get_user_locale '''
+        if not self.current_user:
+            #Use the Accept-Language header
+            return None
+        return self.current_user.get("locale", None)
+
     def render(self, tmpl_name, **context):
         ''' 从写render方法，使用Mako模板引擎实现 '''
+        env_context = {
+            "current_user": self.current_user,
+            "locale":       self.locale,
+            "_":            self.locale.translate,
+            "static_url":   self.static_url,
+        }
+        context.update(env_context)
         html = MakoTemplater.render(tmpl_name, **context)
         self.finish(html)
 

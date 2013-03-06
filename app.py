@@ -3,6 +3,7 @@
 
 import tornado.web
 import tornado.ioloop
+import tornado.locale
 from handlers.home_handler import HomeHandler
 from handlers.home_handler import LoginHandler
 from handlers.home_handler import RegisterHandler
@@ -18,5 +19,8 @@ application = tornado.web.Application([
 ], **settings)
 
 if __name__ == "__main__":
+    # List supported locale run `print(locale.get_supported_locales())`
+    tornado.locale.load_gettext_translations("./locale", "lang")
+
     application.listen(8080)
     tornado.ioloop.IOLoop.instance().start()
