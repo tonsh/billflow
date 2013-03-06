@@ -10,7 +10,7 @@ class HomeHandler(BaseHandler):
     ''' 首页 '''
     def get(self):
         ''' 如果用户未登录，跳转至登录页面 '''
-        self.write(self.current_user.name)
+        self.render("home.html")
 
 class SettingHandler(BaseHandler):
     ''' 个人设置 '''
