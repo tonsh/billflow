@@ -7,15 +7,18 @@ import tornado.locale
 from handlers.home_handler import HomeHandler
 from handlers.home_handler import LoginHandler
 from handlers.home_handler import RegisterHandler
+from handlers.home_handler import SettingHandler
 
 settings = {
     "login_url": "/login",
+    "cookie_secret": "c5586ff9f6ac5211198e37c46154b26e",
 }
 
 application = tornado.web.Application([
     (r"/",      HomeHandler),
     (r"/login", LoginHandler),
     (r"/register", RegisterHandler),
+    (r"/setting", SettingHandler),
 ], **settings)
 
 if __name__ == "__main__":

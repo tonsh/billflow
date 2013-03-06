@@ -3,9 +3,19 @@
 
 import tornado.web
 from libs.mako_template import MakoTemplater
+from models.user import User
 
 class BaseHandler(tornado.web.RequestHandler):
     ''' 应用Handler的基类 '''
+
+    def get_current_user(self):
+        ''' 重写 handler的 get_current_user '''
+        user_id = self.get_secure_cookie("user")
+        if not user_id:
+            return None
+
+        user = User().get_user_by_id(int(user_id))
+        return user
 
     def get_user_locale(self):
         ''' 重写 handler的 get_user_locale '''
