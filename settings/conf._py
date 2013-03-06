@@ -6,7 +6,7 @@ MYSQL_MAP = {
     "host":     "127.0.0.1",
     "user":     "root",
     "pwd":      "root",
-    "database": "billflow"
+    "database": "billflow",
     "echo":     False,
     "encoding": "UTF-8",
 }
