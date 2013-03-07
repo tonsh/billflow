@@ -9,6 +9,7 @@ Requirement
 * [Mako](http://docs.makotemplates.org/en/latest/usage.html)
 * [SQLAlchemy](http://www.sqlalchemy.org)
 * [SQLAlchemy Migrate](https://sqlalchemy-migrate.readthedocs.org/en/v0.7.2/versioning.html)
+* [FormEncode](http://www.formencode.org/en/latest/Validator.html)
 
 Structure
 
