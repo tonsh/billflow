@@ -1,0 +1,13 @@
+<%inherit file="base.html" />
+
+<%def name="body_content()">
+    <p>${_('首页')}</p>
+    %if current_user:
+        ${_('您好,')} ${current_user.name}
+        <a href="/logout">${_('退出登录')}</a>
+    %else:
+        ${_('您好，游客')}
+        <a href="/login">${_('登录')}</a>
+        <a href="/register">${_('注册')}</a>
+    %endif
+</%def>

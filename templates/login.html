@@ -1,0 +1,14 @@
+<%inherit file="base.html" />
+
+<%def name="title()">
+    BillFlow - _('登录')
+</%def>
+
+<%def name="body_content()">
+    <form method="post" action="/login">
+        ${xsrf_form_html()}
+        ${_('用户名')}: <input type="text" name="name" value="" />
+        ${_('密码')}:   <input type="password" name="password" value="" />
+        <input type="submit" value="${_('登录')}" />
+    </form>
+</%def>
