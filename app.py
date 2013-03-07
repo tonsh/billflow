@@ -13,6 +13,7 @@ from handlers.home_handler import SettingHandler
 settings = {
     "login_url": "/login",
     "cookie_secret": "c5586ff9f6ac5211198e37c46154b26e",
+    "xsrf_cookies": True,
 }
 
 application = tornado.web.Application([

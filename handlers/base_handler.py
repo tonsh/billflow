@@ -31,9 +31,11 @@ class BaseHandler(tornado.web.RequestHandler):
             "locale":       self.locale,
             "_":            self.locale.translate,
             "static_url":   self.static_url,
+            "xsrf_form_html": self.xsrf_form_html,
         }
         context.update(env_context)
         html = MakoTemplater.render(tmpl_name, **context)
+            "xsrf_form_html": self.xsrf_form_html,
         self.finish(html)
 
     def request_args(self):

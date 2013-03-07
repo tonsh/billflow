@@ -6,6 +6,7 @@
 
 <%def name="body_content()">
     <form method="post" action="/register">
+        ${xsrf_form_html()}
         ${_('用户名')}: <input type="text" name="name" value="" />
         ${_('密码')}:   <input type="password" name="password" value="" />
         ${_('确认密码')}: <input type="password" name="repwd" value="" />
