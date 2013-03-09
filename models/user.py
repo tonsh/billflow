@@ -27,6 +27,7 @@ class User(object):
         new = {
             'name': self.check_name(user.get('name', '')),
             'password': self.check_pwd(user.get('password', '')),
+            'locale': self.check_locale(user.get('locale', 'zh_CN')),
         }
         save_user = UserMapper(**new)
         self.session.add(save_user)
@@ -53,3 +54,10 @@ class User(object):
             raise BillException(103)
 
         return hashlib.new("md5", pwd.encode('utf-8')).hexdigest()
+
+    def check_locale(self, locale):
+        ''' 地域验证 '''
+        if locale not in ['zh_CN', 'en_US']:
+            locale = 'zh_CN'
+
+        return locale

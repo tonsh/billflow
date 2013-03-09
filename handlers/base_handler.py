@@ -2,6 +2,7 @@
 ''' 封装RequestHandler, 作为应用Handler的基类 '''
 
 import tornado.web
+import tornado.locale
 from libs.mako_template import MakoTemplater
 from models.user import User
 
@@ -22,7 +23,7 @@ class BaseHandler(tornado.web.RequestHandler):
         if not self.current_user:
             #Use the Accept-Language header
             return None
-        return self.current_user.get("locale", None)
+        return tornado.locale.get(self.current_user.locale)
 
     def render(self, tmpl_name, **context):
         ''' 从写render方法，使用Mako模板引擎实现 '''

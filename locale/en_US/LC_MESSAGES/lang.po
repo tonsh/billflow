@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-07 03:24+0800\n"
+"POT-Creation-Date: 2013-03-09 15:25+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,34 +21,44 @@ msgstr ""
 msgid "This is the footer"
 msgstr "This is the foolter!!"
 
-#: templates/register.html:4
+#: templates/register.html:4 templates/home.html:11
 msgid "注册"
 msgstr "Register"
 
-#: templates/register.html:9 templates/login.html:9
+#: templates/register.html:9 templates/login.html:9 templates/login.html:10
+#: templates/register.html:10
 msgid "用户名"
 msgstr "user name"
 
-#: templates/register.html:10 templates/login.html:10
+#: templates/register.html:10 templates/login.html:10 templates/login.html:11
+#: templates/register.html:16
 msgid "密码"
 msgstr "password"
 
-#: templates/register.html:11
+#: templates/register.html:11 templates/register.html:17
 msgid "确认密码"
 msgstr "repassword"
 
 #: templates/home.html:4
 msgid "首页"
-msgstr ""
+msgstr "Home Page"
 
 #: templates/home.html:6
 msgid "您好,"
 msgstr "Hello,"
 
-#: templates/home.html:8
+#: templates/home.html:8 templates/home.html:9
 msgid "您好，游客"
 msgstr "Hello, guest"
 
-#: templates/login.html:4
+#: templates/login.html:4 templates/home.html:10
 msgid "登录"
 msgstr "Login"
+
+#: templates/home.html:7
+msgid "退出登录"
+msgstr "Logout"
+
+#: templates/register.html:11
+msgid "语言"
+msgstr "Language"

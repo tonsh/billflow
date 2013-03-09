@@ -8,6 +8,11 @@
     <form method="post" action="/register">
         ${xsrf_form_html()}
         ${_('用户名')}: <input type="text" name="name" value="" />
+        ${_('语言')}:
+            <select name="locale">
+                <option value="zh_CN">zh_CN</option>
+                <option value="en_US">en_US</option>
+            </select>
         ${_('密码')}:   <input type="password" name="password" value="" />
         ${_('确认密码')}: <input type="password" name="repwd" value="" />
         <input type="submit" value="${_('注册')}" />
