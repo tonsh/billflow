@@ -35,7 +35,6 @@ class BaseHandler(tornado.web.RequestHandler):
         }
         context.update(env_context)
         html = MakoTemplater.render(tmpl_name, **context)
-            "xsrf_form_html": self.xsrf_form_html,
         self.finish(html)
 
     def request_args(self):
