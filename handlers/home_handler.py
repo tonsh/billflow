@@ -9,7 +9,6 @@ from models.user import User
 class HomeHandler(BaseHandler):
     ''' 首页 '''
     def get(self):
-        ''' 如果用户未登录，跳转至登录页面 '''
         self.render("home.html")
 
 class SettingHandler(BaseHandler):
